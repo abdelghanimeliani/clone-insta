@@ -228,13 +228,14 @@ class MyApp extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      StoryALaUne('netkhayel') ,
-                      StoryALaUne("sahfelakhla9") ,
-                      StoryALaUne("sahfelakhla9") ,
-                      StoryALaUne("sahfelakhla9") ,
-                      StoryALaUne("sahfelakhla9") ,
-                      StoryALaUne("sahfelakhla9") ,
-                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                      StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
                     ],
                   ),
                 ),
@@ -250,7 +251,7 @@ class MyApp extends StatelessWidget {
 
 
 
-StoryALaUne(String titre){
+StoryALaUne(String titre , String photo){
   return Row(
     children: [
       Column(
@@ -260,8 +261,19 @@ StoryALaUne(String titre){
             width: 70,
             decoration: BoxDecoration(
                 color: Colors.white24,
-                border: Border.all(color: Colors.white24) ,
+                border: Border.all(color: Colors.white70) ,
                 shape:BoxShape.circle
+            ),
+            child: Container(
+              height: 45,
+              width: 45,
+              decoration:   BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: AssetImage(photo),
+                    fit: BoxFit.fill
+                ),
+              ),
             ),
           ) ,
           SizedBox(height: 8,) ,
