@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 8 , top:15 , right: 15),
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                         image: DecorationImage(
+                          fit: BoxFit.fill ,
 
                             image:AssetImage("assets/photodeprofile.PNG",)
                         )
@@ -128,6 +130,114 @@ class MyApp extends StatelessWidget {
                     ],)
                   ],
                 ),
+              ) ,
+
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:const [
+                    Text('Abd Elghani Meliani' ,
+                    style: TextStyle(
+                      color: Colors.white ,
+                      fontSize: 18
+                    ),
+                    ),
+
+                    Text('📱💻' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white ,
+                          fontSize: 18
+                      ),
+                    ),
+
+                    Text('اللهم قدرٌ جميل ، و خبر جميل ، و دعوة مستجابة ❤️' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white ,
+                          fontSize: 18
+                      ),
+                    ),
+
+                    Text('https://github.com/abdelghanimeliani/' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.lightBlue ,
+                          fontSize: 18,
+                      ),
+                    ),
+
+                    Text('voir la traduction' ,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                          color: Colors.white ,
+                          fontSize: 18
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white54) ,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      height: 30,
+                      width: 350,
+                      child: const Center(
+                        child: Text(
+                          'Modifier le profile' ,
+                          style: TextStyle(
+                            fontSize: 18 ,
+                            fontWeight: FontWeight.bold ,
+                            color: Colors.white
+                          ),
+                        ),
+                      ),
+                    ) ,
+
+
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white24) ,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      height: 30,
+                      width: 40,
+                      child: Center(
+                        child: Icon(Icons.keyboard_arrow_down_outlined , color: Colors.white,)
+                      ),
+                    )
+                  ],
+                ),
+              ) ,
+
+
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      StoryALaUne('netkhayel') ,
+                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne("sahfelakhla9") ,
+                      StoryALaUne("sahfelakhla9") ,
+                    ],
+                  ),
+                ),
               )
             ],
           )
@@ -135,4 +245,36 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+
+
+
+StoryALaUne(String titre){
+  return Row(
+    children: [
+      Column(
+        children: [
+          Container(
+            height:70 ,
+            width: 70,
+            decoration: BoxDecoration(
+                color: Colors.white24,
+                border: Border.all(color: Colors.white24) ,
+                shape:BoxShape.circle
+            ),
+          ) ,
+          SizedBox(height: 8,) ,
+          Text(
+             titre ,
+            style: TextStyle(
+                color: Colors.white
+            ),
+          )
+        ],
+      ),
+
+      SizedBox(width: 10,)
+    ],
+  );
 }
