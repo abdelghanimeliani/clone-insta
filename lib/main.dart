@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -170,7 +171,7 @@ class MyApp extends StatelessWidget {
                         Text('https://github.com/abdelghanimeliani/' ,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.lightBlue ,
+                              color: Color(0XFFABCDEF) ,
                               fontSize: 18,
                           ),
                         ),
@@ -235,22 +236,19 @@ class MyApp extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
-                          StoryALaUne('netkhayel' , "assets/photodeprofile.PNG") ,
+                          StoryALaUne('netkhayel' , "assets/1.jpg") ,
+                          StoryALaUne('netkhayel' , "assets/2.jpg") ,
+                          StoryALaUne('netkhayel' , "assets/3.jpg") ,
+                          StoryALaUne('netkhayel' , "assets/4.jpg") ,
+                          StoryALaUne('netkhayel' , "assets/5.jpg") ,
                         ],
                       ),
                     ),
                   ),
                   TabBar(
                     tabs: [
-                      Tab(icon: Icon(Icons.directions_car , color: Color(0xFFABCDEF))),
-                      Tab(icon: Icon(Icons.directions_transit)),
+                      Tab(icon: Icon(Icons.crop_square_rounded , color: Colors.white)),
+                      Tab(icon: Icon(Icons.person_pin_outlined , color: Colors.white,) ,),
 
                     ],
                   ),
@@ -259,17 +257,24 @@ class MyApp extends StatelessWidget {
                     width: 1000,
                     child: TabBarView(
                       children: [
-                        Icon(Icons.directions_car , color: Color(0xFFABCDEF),),
+                        GridView.count(
+                            crossAxisCount: 3 ,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          children: [
+                            photo("assets/1.PNG"),
+                            photo("assets/2.PNG"),
+                            photo("assets/3.PNG"),
+                            photo("assets/4.PNG"),
+                            photo("assets/5.PNG"),
+                            photo("assets/6.PNG"),
+
+                          ],
+                        ),
                         Icon(Icons.directions_transit),
                       ],
                     ),
                   ),
-
-
-
-
-
-
 
 
                 ],
@@ -304,7 +309,7 @@ StoryALaUne(String titre , String photo){
                 shape: BoxShape.circle,
                 image: DecorationImage(
                     image: AssetImage(photo),
-                    fit: BoxFit.fill
+                    fit: BoxFit.cover
                 ),
               ),
             ),
@@ -321,5 +326,19 @@ StoryALaUne(String titre , String photo){
 
       SizedBox(width: 10,)
     ],
+  );
+}
+
+
+photo(String location){
+  return Container(
+    height: 400,
+    width: 400,
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage(location),
+        fit: BoxFit.fill
+      )
+    ),
   );
 }
